@@ -7,14 +7,40 @@
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "BusinessRules/1.0.0": {
+        "dependencies": {
+          "BusinessRules.Core": "1.0.0"
+        },
         "runtime": {
           "BusinessRules.dll": {}
+        }
+      },
+      "BusinessRules.Common/1.0.0": {
+        "runtime": {
+          "BusinessRules.Common.dll": {}
+        }
+      },
+      "BusinessRules.Core/1.0.0": {
+        "dependencies": {
+          "BusinessRules.Common": "1.0.0"
+        },
+        "runtime": {
+          "BusinessRules.Core.dll": {}
         }
       }
     }
   },
   "libraries": {
     "BusinessRules/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BusinessRules.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BusinessRules.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

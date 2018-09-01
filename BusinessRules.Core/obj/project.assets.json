@@ -206,19 +206,6 @@
         "runtime": {
           "bin/placeholder/BusinessRules.Common.dll": {}
         }
-      },
-      "BusinessRules.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "dependencies": {
-          "BusinessRules.Common": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/BusinessRules.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BusinessRules.Core.dll": {}
-        }
       }
     }
   },
@@ -684,16 +671,11 @@
       "type": "project",
       "path": "../BusinessRules.Common/BusinessRules.Common.csproj",
       "msbuildProject": "../BusinessRules.Common/BusinessRules.Common.csproj"
-    },
-    "BusinessRules.Core/1.0.0": {
-      "type": "project",
-      "path": "../BusinessRules.Core/BusinessRules.Core.csproj",
-      "msbuildProject": "../BusinessRules.Core/BusinessRules.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "BusinessRules.Core >= 1.0.0",
+      "BusinessRules.Common >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
@@ -704,11 +686,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\projects\\BusinessRules\\BusinessRules\\BusinessRules.csproj",
-      "projectName": "BusinessRules",
-      "projectPath": "c:\\projects\\BusinessRules\\BusinessRules\\BusinessRules.csproj",
+      "projectUniqueName": "c:\\projects\\BusinessRules\\BusinessRules.Core\\BusinessRules.Core.csproj",
+      "projectName": "BusinessRules.Core",
+      "projectPath": "c:\\projects\\BusinessRules\\BusinessRules.Core\\BusinessRules.Core.csproj",
       "packagesPath": "C:\\Users\\mike\\.nuget\\packages\\",
-      "outputPath": "c:\\projects\\BusinessRules\\BusinessRules\\obj\\",
+      "outputPath": "c:\\projects\\BusinessRules\\BusinessRules.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -727,8 +709,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "c:\\projects\\BusinessRules\\BusinessRules.Core\\BusinessRules.Core.csproj": {
-              "projectPath": "c:\\projects\\BusinessRules\\BusinessRules.Core\\BusinessRules.Core.csproj"
+            "c:\\projects\\BusinessRules\\BusinessRules.Common\\BusinessRules.Common.csproj": {
+              "projectPath": "c:\\projects\\BusinessRules\\BusinessRules.Common\\BusinessRules.Common.csproj"
             }
           }
         }
@@ -743,6 +725,7 @@
       "netcoreapp2.0": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true

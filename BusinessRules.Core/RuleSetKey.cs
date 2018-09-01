@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace BusinessRules
+namespace BusinessRules.Core
 {
     public class RuleSetKey
     {

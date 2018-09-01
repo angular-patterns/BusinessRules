@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BusinessRules.Common;
 using BusinessRules.Models;
 
 namespace BusinessRules.Rules.Person

@@ -9,3 +9,8 @@ c:\projects\BusinessRules\BusinessRules\obj\Debug\netcoreapp2.0\BusinessRules.As
 c:\projects\BusinessRules\BusinessRules\obj\Debug\netcoreapp2.0\BusinessRules.AssemblyInfo.cs
 c:\projects\BusinessRules\BusinessRules\obj\Debug\netcoreapp2.0\BusinessRules.dll
 c:\projects\BusinessRules\BusinessRules\obj\Debug\netcoreapp2.0\BusinessRules.pdb
+c:\projects\BusinessRules\BusinessRules\bin\Debug\netcoreapp2.0\BusinessRules.Common.dll
+c:\projects\BusinessRules\BusinessRules\bin\Debug\netcoreapp2.0\BusinessRules.Core.dll
+c:\projects\BusinessRules\BusinessRules\bin\Debug\netcoreapp2.0\BusinessRules.Core.pdb
+c:\projects\BusinessRules\BusinessRules\bin\Debug\netcoreapp2.0\BusinessRules.Common.pdb
+c:\projects\BusinessRules\BusinessRules\obj\Debug\netcoreapp2.0\BusinessRules.csproj.CopyComplete

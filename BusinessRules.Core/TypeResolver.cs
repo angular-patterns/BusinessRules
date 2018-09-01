@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using BusinessRules.Common;
+using System;
 
-namespace BusinessRules
+namespace BusinessRules.Core
 {
     public class TypeResolver : ITypeResolver
     {

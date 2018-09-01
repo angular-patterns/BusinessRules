@@ -1,4 +1,5 @@
-﻿using BusinessRules.Rules.Person;
+﻿using BusinessRules.Common;
+using BusinessRules.Rules.Person;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -1,4 +1,6 @@
-﻿using BusinessRules.RuleSets.Person;
+﻿using BusinessRules.Common;
+using BusinessRules.Core;
+using BusinessRules.RuleSets.Person;
 using System;
 
 namespace BusinessRules

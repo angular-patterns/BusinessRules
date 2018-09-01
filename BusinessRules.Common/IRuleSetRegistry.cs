@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace BusinessRules
+namespace BusinessRules.Common
 {
     public interface IRuleSetRegistry
     {
-        RuleSetKey Register<RuleSetType>();
+        void Register<RuleSetType>();
 
         IList<IRuleSet> Get<Model, Context>();
 

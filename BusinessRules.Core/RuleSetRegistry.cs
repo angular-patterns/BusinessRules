@@ -1,10 +1,9 @@
-﻿using BusinessRules.RuleSets.Person;
+﻿using BusinessRules.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace BusinessRules
+namespace BusinessRules.Core
 {
     public class RuleSetRegistry : IRuleSetRegistry
     {
@@ -69,7 +68,7 @@ namespace BusinessRules
                 .FirstOrDefault(t => (category == null || t.Category == category) && (subCategory == null || t.SubCategory == subCategory));
         }
 
-        public RuleSetKey Register<RuleSetType>()
+        public void Register<RuleSetType>()
         {
             var ruleSetType = typeof(RuleSetType);
             var genericType = ruleSetType.GetInterfaces()
@@ -83,17 +82,13 @@ namespace BusinessRules
             
 
             var typeArgs = genericType.GetGenericArguments();
-
             var ruleSetKey = RuleSetKey.Create(typeArgs[0], typeArgs[1]);
-
             if (!this.registry.ContainsKey(ruleSetKey))
             {
                 this.registry[ruleSetKey] = new List<Type>();
             }
-
             this.registry[ruleSetKey].Add(ruleSetType);
 
-            return ruleSetKey;
         }
 
 
