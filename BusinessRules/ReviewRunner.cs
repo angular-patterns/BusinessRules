@@ -16,7 +16,7 @@ namespace BusinessRules
             this.registry = registry;
             this.typeResolver = typeResolver;
         }
-        public async Task<ReviewResult> Run<Model, Context>(Model model, Context context)
+        public async Task<ReviewResult> RunAsync<Model, Context>(Model model, Context context)
         {
             var ruleSet = this.registry.Get<Model, Context>().First();
 
@@ -33,6 +33,10 @@ namespace BusinessRules
                 Rules = reviewRules,
                 Success = reviewRules.All(t=>t.IsSatisfied)
             };
+        }
+        public ReviewResult Run<Model, Context>(Model model, Context context)
+        {
+            return RunAsync(model, context).Result;
         }
 
         public ReviewRule EvaluateRule<Model, Context>(

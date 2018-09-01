@@ -15,7 +15,7 @@ namespace BusinessRules
             var rules = ruleSets[0].Rules;
 
             var reviewRunner = new ReviewRunner(registry, new TypeResolver());
-            var result = reviewRunner.Run(new Models.Person(), new DefaultContext()).Result;
+            var result = reviewRunner.Run(new Models.Person(), new DefaultContext());
             Console.WriteLine("Hello World!");
         }
     }
