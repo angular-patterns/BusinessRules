@@ -5,6 +5,7 @@ using System.Text;
 
 namespace BusinessRules.RuleSets.Person
 {
+    [Selector(Category="Save", SubCategory ="Person")]
     public class PersonRuleSet : BaseRuleSet<Models.Person, DefaultContext>, IRuleSet
     {
 

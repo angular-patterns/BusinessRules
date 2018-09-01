@@ -28,6 +28,31 @@ namespace BusinessRules
             }).ToList();
         }
 
+        public IRuleSet Resolve<ModelType, ContextType>(string selector)
+        {
+            string category = null;
+            string subCategory = null;
+
+            selector = selector ?? string.Empty;
+            var path = selector.Split('.');
+
+            if (path.Length > 2)
+                throw new Exception("Selector cannot have more than two segments");
+
+            if (path.Length >= 1 && !string.IsNullOrEmpty(path[0]))
+                category = path[0].Trim();
+
+            if (path.Length == 2 && !string.IsNullOrEmpty(path[1]))
+                subCategory = path[1].Trim();
+
+            var ruleSets = Get<ModelType, ContextType>();
+            return ruleSets.Where(t =>
+            {
+                SelectorAttribute[] attributes = (SelectorAttribute[]) t.GetType().GetCustomAttributes(typeof(SelectorAttribute), true);
+                return attributes.Any(x => x.Category == category && x.SubCategory == subCategory);
+            }).First();
+        }
+
         public RuleSetKey Register<RuleSetType>()
         {
             var ruleSetType = typeof(RuleSetType);

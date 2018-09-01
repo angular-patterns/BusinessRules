@@ -9,6 +9,8 @@ namespace BusinessRules
         RuleSetKey Register<RuleSetType>();
 
         IList<IRuleSet> Get<Model, Context>();
+
+        IRuleSet Resolve<Model, Context>(string selector);
     }
 
 }
