@@ -46,11 +46,27 @@ namespace BusinessRules
                 subCategory = path[1].Trim();
 
             var ruleSets = Get<ModelType, ContextType>();
-            return ruleSets.Where(t =>
+            ruleSets = ruleSets.Where(t =>
             {
-                SelectorAttribute[] attributes = (SelectorAttribute[]) t.GetType().GetCustomAttributes(typeof(SelectorAttribute), true);
-                return attributes.Any(x => x.Category == category && x.SubCategory == subCategory);
-            }).First();
+                return GetSelectorAttribute(t, category, subCategory) != null;
+            }).ToList();
+
+            if (ruleSets.Count == 0)
+                throw new ApplicationException($"Could not resolve a rule set with selector {selector}");
+            if (ruleSets.Count > 1) {
+                var selectorList = String.Join(',', ruleSets.Select(t => GetSelectorAttribute(t, category, subCategory).ToString()));
+                throw new ApplicationException($"Multiple rule sets found with selector {selector}: [{selectorList}]");
+            }
+
+            return ruleSets.First();
+        }
+
+        private SelectorAttribute GetSelectorAttribute(IRuleSet ruleSet, string category, string subCategory)
+        {
+            SelectorAttribute[] attributes = (SelectorAttribute[])ruleSet.GetType().GetCustomAttributes(typeof(SelectorAttribute), true);
+
+            return attributes
+                .FirstOrDefault(t => (category == null || t.Category == category) && (subCategory == null || t.SubCategory == subCategory));
         }
 
         public RuleSetKey Register<RuleSetType>()

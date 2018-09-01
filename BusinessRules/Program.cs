@@ -9,6 +9,7 @@ namespace BusinessRules
         {
             var registry = new RuleSetRegistry(new TypeResolver());
             registry.Register<PersonRuleSet>();
+            registry.Register<PersonRuleSet2>();
 
             var ruleSets = registry.Get<Models.Person, DefaultContext>();
 
@@ -16,6 +17,7 @@ namespace BusinessRules
 
             var reviewRunner = new ReviewRunner(registry, new TypeResolver());
             var result = reviewRunner.Run(new Models.Person(), new DefaultContext(), "Save.Person");
+            var result2 = reviewRunner.Run(new Models.Person(), new DefaultContext(), "Update.Person");
             Console.WriteLine("Hello World!");
         }
     }

@@ -15,5 +15,17 @@ namespace BusinessRules
             this.Category = category;
             this.SubCategory = subCategory;
         }
+
+        public override string ToString()
+        {
+            var category = (Category ?? string.Empty).Trim();
+            var subCategory = (SubCategory ?? string.Empty).Trim();
+
+            if (subCategory == string.Empty)
+                return category;
+            else
+                return $"{category}.{subCategory}";
+            
+        }
     }
 }

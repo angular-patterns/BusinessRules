@@ -30,6 +30,7 @@ namespace BusinessRules
             
             return new ReviewResult()
             {
+                Selector = selector,
                 Rules = reviewRules,
                 Success = reviewRules.All(t=>t.IsSatisfied)
             };
