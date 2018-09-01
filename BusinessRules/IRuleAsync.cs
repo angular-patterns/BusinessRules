@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace BusinessRules
 {
-    public interface IReviewRunner
+    public interface IRuleAsync<Model, Context>
     {
-        Task<ReviewResult> Run<Model, Context>(Model model, Context context);
+        string Message { get; }
+        Task<bool> IsSatisfiedBy(Model t, Context c);
     }
 }

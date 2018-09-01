@@ -11,7 +11,7 @@ namespace BusinessRules.Rules.Person
 
         public bool IsSatisfiedBy(Models.Person t, DefaultContext c)
         {
-            return t.FirstName != string.Empty;
+            return !string.IsNullOrEmpty(t.FirstName);
         }
     }
 }

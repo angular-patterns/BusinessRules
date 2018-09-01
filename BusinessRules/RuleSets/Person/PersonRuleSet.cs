@@ -11,7 +11,7 @@ namespace BusinessRules.RuleSets.Person
         public PersonRuleSet()
         {
             AddRule<FirstNameCannotBeBlank>("00001");
-            AddRule<LastNameCannotBeBlank>("00002");
+            AddRuleAsync<LastNameCannotBeBlank>("00002");
             AddRule<BirthdateCannotBeBlank>("00003");
         }
     }

@@ -22,12 +22,28 @@ namespace BusinessRules
                 BusinessId = businessId,
                 ModelType = typeof(T),
                 ContextType = typeof(C),
-                RuleType = typeof(RuleType)
+                RuleType = typeof(RuleType),
+                IsAsync = false
             };
             this.RuleMap.Add(businessId, metadata);
 
             return metadata;
         }
+        public RuleMetadata AddRuleAsync<RuleType>(string businessId) where RuleType : IRuleAsync<T, C>
+        {
+            var metadata = new RuleMetadata
+            {
+                BusinessId = businessId,
+                ModelType = typeof(T),
+                ContextType = typeof(C),
+                RuleType = typeof(RuleType),
+                IsAsync = true
+            };
+            this.RuleMap.Add(businessId, metadata);
+
+            return metadata;
+        }
+
 
 
     }

@@ -12,5 +12,7 @@ namespace BusinessRules
         public Type ContextType { get;set; }
 
         public Type RuleType { get; set; }
+
+        public bool IsAsync { get; set; }
     }
 }
